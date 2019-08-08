@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker run -it --rm -v $PWD:/var/dump -e DUMPER_HOST=$(hostname -i | cut -d' ' -f1) -e DUMPER_PORT=3306 -e DUMPER_SCHEMA=mag2ee -e DUMPER_USERNAME=root -e DUMPER_PASSWORD=root -e DUMPER_ACTION=backup --entrypoint=/bin/sh 00f100/sqldumper:mysql
